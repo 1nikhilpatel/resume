@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom configuration for the Dark Red color -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-dark-red': '#D32F2F', // The chosen Dark Red
+                        'accent-light-red': '#EF5350', // A lighter shade for hover/secondary elements
+                        'body-bg': '#F8F8F8', // Off-white background for contrast
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ensures smooth scrolling to anchors */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom border for the section divider */
+        .section-divider {
+            height: 4px;
+            width: 80px;
+            background-color: #D32F2F;
+            margin-bottom: 24px;
+            border-radius: 9999px;
+        }
+        /* Style for the active/current section link */
+        .nav-link:hover, .nav-link.active {
+            color: #D32F2F;
+            border-bottom: 2px solid #D32F2F;
+        }
+        /* Custom ring for dark elements on focus */
+        .focus-ring {
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.5); /* D32F2F with transparency */
+        }
+    </style>
+</head>
+<body class="bg-body-bg font-sans text-gray-800">
+
+    <!-- Sticky Navigation Bar -->
+    <nav id="navbar" class="sticky top-0 z-50 bg-white shadow-md transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold text-accent-dark-red">NIKHIL PATEL</span>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#profile" class="nav-link text-gray-600 hover:text-accent-dark-red transition duration-150 py-1" onclick="setActiveLink(this)">Profile</a>
+                    <a href="#experience" class="nav-link text-gray-600 hover:text-accent-dark-red transition duration-150 py-1" onclick="setActiveLink(this)">Portfolio & Experience</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-accent-dark-red transition duration-150 py-1" onclick="setActiveLink(this)">Skills</a>
+                    <a href="#education" class="nav-link text-gray-600 hover:text-accent-dark-red transition duration-150 py-1" onclick="setActiveLink(this)">Education & Interests</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-500 hover:text-accent-dark-red focus:outline-none focus-visible:focus-ring p-2 rounded-md transition duration-150">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#profile" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-50 hover:text-accent-dark-red transition duration-150" onclick="setActiveLink(this, true)">Profile</a>
+                <a href="#experience" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-50 hover:text-accent-dark-red transition duration-150" onclick="setActiveLink(this, true)">Portfolio & Experience</a>
+                <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-50 hover:text-accent-dark-red transition duration-150" onclick="setActiveLink(this, true)">Skills</a>
+                <a href="#education" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-50 hover:text-accent-dark-red transition duration-150" onclick="setActiveLink(this, true)">Education & Interests</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Profile Section -->
+        <section id="profile" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12">
+            <div class="md:flex md:space-x-12 items-center">
+                <!-- Profile Image (Placeholder) -->
+                <div class="mb-6 md:mb-0 flex-shrink-0">
+                    <!-- Using the uploaded image file (1760683744676.jpg) as the profile picture -->
+                    <img src="1760683744676.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/D32F2F/FFFFFF?text=NP';" alt="Profile Picture of Nikhil Patel" class="w-36 h-36 rounded-full object-cover border-4 border-accent-dark-red shadow-md">
+                </div>
+                <!-- Introduction Text -->
+                <div>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">Nikhil Patel</h1>
+                    <h2 class="text-xl sm:text-2xl font-semibold text-accent-dark-red mb-4">Video Editor & Digital Content Creator | Tech & Mechanical Focus</h2>
+                    <p class="text-gray-600 leading-relaxed max-w-3xl">
+                        A dynamic and results-oriented video editor specializing in short-form content that drives massive engagement. Proven ability to translate complex ideas into viral-ready videos. Deeply interested in **Technology and Mechanics**, currently expanding skills into **CAD and 3D modeling** for design and engineering projects.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="mailto:patelsir293742@gmail.com" class="text-accent-dark-red hover:text-accent-light-red transition duration-150 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            patelsir293742@gmail.com
+                        </a>
+                        <a href="tel:+919582905128" class="text-accent-dark-red hover:text-accent-light-red transition duration-150 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.5l1.5 4.5 3.5-3.5 4.5 1.5V19a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
+                            +91 9582905128 (New Delhi)
+                        </a>
+                        <a href="https://www.instagram.com/1_nikhilpatel_" target="_blank" class="text-accent-dark-red hover:text-accent-light-red transition duration-150 flex items-center">
+                             <!-- Simple Instagram icon using SVG for consistent style -->
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.7c-2.4 0-4.3 1.9-4.3 4.3v7.4c0 2.4 1.9 4.3 4.3 4.3h7.4c2.4 0 4.3-1.9 4.3-4.3V9.5c0-2.4-1.9-4.3-4.3-4.3H7.6zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm5.8-9.4a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>
+                            @1_NIKHILPATEL_ (Instagram)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-12">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6">Portfolio & Viral Content Experience</h3>
+            <div class="section-divider"></div>
+
+            <div class="space-y-8">
+                <!-- Project 1: Viral Reel Editing -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-dark-red transition duration-300 hover:shadow-xl">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-900">High-Volume Digital Content Editing</h4>
+                            <p class="text-md text-gray-600">Short-Form Video (Reels/Shorts) | Independent Project</p>
+                        </div>
+                        <span class="text-sm font-medium text-accent-dark-red bg-red-50 px-3 py-1 rounded-full">3 Months (Intense Period)</span>
+                    </div>
+                    <ul class="list-disc ml-6 mt-3 space-y-2 text-gray-700">
+                        <li>**Viral Success:** Consistently edited **5 Reels per day** over a 3-month period, resulting in multiple videos achieving between **600K and 1 Million views**.</li>
+                        <li>**Engagement Focus:** Utilized fast-paced editing, trending sounds, and effective text overlays (Premiere Pro, Filmora, CapCut) to maximize audience retention and sharing.</li>
+                        <li>**Client Exposure:** Successfully collaborated with prominent content creators including **Tech Jasmeet Mam** and **Fitness Influencer Himani Mam**.</li>
+                    </ul>
+                    <div class="mt-4">
+                        <a href="https://drive.google.com/drive/folders/1KB3gPwUQ4pESiW5f4hEhWzZ7yJCiVoIU?usp=drive_link" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-accent-dark-red hover:bg-accent-light-red px-4 py-2 rounded-lg transition duration-150 shadow-md hover:shadow-lg">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.55 4.55M16 17H4a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v10z"></path></svg>
+                            View Projects Folder (Google Drive)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Placeholder for future CAD/Tech Project -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 transition duration-300 hover:shadow-xl">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-900">Learning Project: Mechanical Design & Prototyping</h4>
+                            <p class="text-md text-gray-600">Focus: CAD Modeling | Personal Initiative</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">In Progress</span>
+                    </div>
+                    <p class="text-gray-700 mt-3">Currently mastering **CAD / SOLID WORKS** and **Fusion 360** to design and visualize mechanical components. Aiming to integrate these technical skills with video production expertise to create engaging tech review and mechanism explanation videos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-12">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6">Key Skills</h3>
+            <div class="section-divider"></div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Category 1: Video Editing Software -->
+                    <div>
+                        <h4 class="font-bold text-lg text-accent-dark-red mb-3">Video Production</h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Adobe Premiere Pro</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Filmora</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>CapCut (Mobile/Desktop)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 2: Technical/Design Skills -->
+                    <div>
+                        <h4 class="font-bold text-lg text-accent-dark-red mb-3">Tech & Design (Learning)</h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>CAD / SOLID WORKS</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Fusion 360</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Technical Visualization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3: Content Strategy & Metrics -->
+                    <div>
+                        <h4 class="font-bold text-lg text-accent-dark-red mb-3">Digital Strategy</h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Audience Retention</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Short-Form Optimization</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Trend Spotting</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 4: General Skills -->
+                    <div>
+                        <h4 class="font-bold text-lg text-accent-dark-red mb-3">General Competencies</h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Attention to Detail</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Collaboration (Clients)</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-accent-dark-red" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Fast Learner</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="mb-12">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6">Education & Core Interests</h3>
+            <div class="section-divider"></div>
+
+            <div class="space-y-8">
+                <!-- Education Block -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-dark-red transition duration-300 hover:shadow-xl">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-900">University Education (Degree Name Placeholder)</h4>
+                            <p class="text-md text-gray-600">Institution Name Placeholder | New Delhi</p>
+                        </div>
+                        <span class="text-sm font-medium text-accent-dark-red bg-red-50 px-3 py-1 rounded-full">Expected Graduation: 2029</span>
+                    </div>
+                    <p class="text-gray-700 mt-2">Currently pursuing a degree that supports technical and creative development. Combining academic learning with practical skills in video production and mechanical design.</p>
+                </div>
+
+                <!-- Interests Block -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-400">
+                    <h4 class="text-xl font-semibold text-gray-900">Core Interests</h4>
+                    <ul class="list-disc ml-6 mt-3 space-y-2 text-gray-700">
+                        <li>**Technology:** Deep interest in the latest gadgets, software, and digital trends.</li>
+                        <li>**Mechanics:** Passion for understanding how physical systems, engines, and machines work.</li>
+                        <li>**Creative Production:** Focusing on high-impact, short-form video content creation and optimization.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; 2025 Nikhil Patel. Designed with Modern Professional theme.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Active Navigation State (Unchanged) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Optional: Change icon when menu is open/closed
+            });
+
+            // --- Set Active Link Function ---
+            window.setActiveLink = function(clickedLink, closeMenu = false) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                clickedLink.classList.add('active');
+                
+                if (closeMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+
+            // --- Intersection Observer for Scrollspy ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Trigger when 50% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentSection = entry.target.id;
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === currentSection) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Set the initial active link for the first section
+            if (navLinks.length > 0) {
+                navLinks[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
